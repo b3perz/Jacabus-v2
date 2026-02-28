@@ -22,15 +22,15 @@ export default function CalculatorCard({
       <div className="glass-card-hover p-6 h-full flex flex-col">
         <div className="flex items-start justify-between mb-4">
           <div
-            className={`w-12 h-12 rounded-xl flex items-center justify-center ${accentColor} transition-transform duration-300 group-hover:scale-110`}
+            className={`w-12 h-12 rounded-xl flex items-center justify-center ${accentColor} transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}
           >
             {icon}
           </div>
-          <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--color-text-muted)] bg-[var(--color-surface-2)] px-2.5 py-1 rounded-full">
+          <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--color-text-muted)] bg-[var(--color-surface-2)] px-2.5 py-1 rounded-full border border-[var(--color-border)]">
             {category}
           </span>
         </div>
-        <h3 className="text-base font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+        <h3 className="text-base font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors duration-300">
           {title}
         </h3>
         <p className="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1">
@@ -47,7 +47,7 @@ export default function CalculatorCard({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="transition-transform group-hover:translate-x-1"
+            className="transition-transform duration-300 group-hover:translate-x-1"
           >
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
