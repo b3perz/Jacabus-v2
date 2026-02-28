@@ -84,6 +84,50 @@ const CALCULATORS = [
     ),
   },
   {
+    title: "Snow Drift",
+    description: "Snow drift loads on lower adjacent roofs per NBC 2020 Cl. 4.1.6. Step conditions and obstruction configurations with interactive drift profile diagram.",
+    href: "/calculators/snow-drift",
+    category: "Loads",
+    accentColor: "bg-cyan-500/15 text-cyan-400 border border-cyan-500/20",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 21h18M3 15h6V9h6v12M15 3h6v18" />
+      </svg>
+    ),
+  },
+  {
+    title: "Live Load",
+    description: "NBC 2020 Table 4.1.5.3 live loads for all occupancy types. Tributary area reduction, factored load combinations, and visual comparison charts.",
+    href: "/calculators/live-load",
+    category: "Loads",
+    accentColor: "bg-amber-500/15 text-amber-400 border border-amber-500/20",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Steel Column",
+    description: "Factored compressive resistance Cr per CSA S16-19 Cl. 13.3.1. Interactive buckling curve, W-shape section comparison, and cross-section visualization.",
+    href: "/calculators/steel-column",
+    category: "Steel",
+    accentColor: "bg-blue-500/15 text-blue-400 border border-blue-500/20",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="5" y1="4" x2="19" y2="4" />
+        <line x1="12" y1="4" x2="12" y2="20" />
+        <line x1="5" y1="20" x2="19" y2="20" />
+        <line x1="8" y1="4" x2="8" y2="6" />
+        <line x1="16" y1="4" x2="16" y2="6" />
+        <line x1="8" y1="18" x2="8" y2="20" />
+        <line x1="16" y1="18" x2="16" y2="20" />
+      </svg>
+    ),
+  },
+  {
     title: "Unit Converter",
     description: "Convert between metric and imperial across 9 categories. Length, force, pressure, moment, area, volume, mass, density, temperature.",
     href: "/calculators/unit-converter",
@@ -128,7 +172,7 @@ export default function CalculatorsPage() {
             </div>
           </div>
           <div className="flex flex-wrap gap-2 mt-4">
-            {["All", "Loads", "Analysis", "Concrete", "Utility"].map((cat) => (
+            {["All", "Loads", "Analysis", "Steel", "Concrete", "Utility"].map((cat) => (
               <span key={cat} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-surface-2)] border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-white hover:border-[var(--color-border-hover)] transition-all duration-200 cursor-default">
                 {cat}
               </span>

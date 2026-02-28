@@ -63,6 +63,9 @@ const CALC_PREVIEW = [
   { name: "Wind Load", desc: "NBC 2020 Cl. 4.1.7", color: "text-sky-400", href: "/calculators/wind-load" },
   { name: "Seismic", desc: "NBC 2020 Cl. 4.1.8", color: "text-rose-400", href: "/calculators/seismic-load" },
   { name: "Beam Analysis", desc: "Interactive diagrams", color: "text-amber-400", href: "/calculators/beam-analysis" },
+  { name: "Snow Drift", desc: "Step & obstruction", color: "text-sky-300", href: "/calculators/snow-drift" },
+  { name: "Live Load", desc: "NBC 2020 Cl. 4.1.5", color: "text-amber-300", href: "/calculators/live-load" },
+  { name: "Steel Column", desc: "CSA S16-19", color: "text-blue-400", href: "/calculators/steel-column" },
   { name: "Dead Load", desc: "Assembly builder", color: "text-emerald-400", href: "/calculators/dead-load" },
   { name: "Concrete Dev.", desc: "CSA A23.3-19", color: "text-violet-400", href: "/calculators/concrete-development" },
 ];
@@ -136,7 +139,7 @@ export default function Home() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="m9 18 6-6-6-6" /></svg>
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
               {CALC_PREVIEW.map((calc) => (
                 <Link
                   key={calc.name}

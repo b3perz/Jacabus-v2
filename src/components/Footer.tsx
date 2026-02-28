@@ -34,6 +34,9 @@ export default function Footer() {
                 { href: "/calculators/seismic-load", label: "Seismic Load" },
                 { href: "/calculators/beam-analysis", label: "Beam Analysis" },
                 { href: "/calculators/dead-load", label: "Dead Load" },
+                { href: "/calculators/snow-drift", label: "Snow Drift" },
+                { href: "/calculators/live-load", label: "Live Load" },
+                { href: "/calculators/steel-column", label: "Steel Column" },
               ].map((link) => (
                 <Link key={link.href} href={link.href}
                   className="block text-xs text-[var(--color-text-muted)] hover:text-white transition-colors">
