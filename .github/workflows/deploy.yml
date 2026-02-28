@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/build-calculator-app-XGcI2]
+    branches: [main, Main, claude/build-calculator-app-XGcI2]
 
 permissions:
   contents: read
