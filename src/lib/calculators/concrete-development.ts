@@ -59,7 +59,8 @@ export function calculateDevelopmentLength(
 
   // CSA A23.3-19 Cl. 12.2.3
   // ld = 0.45 × k1 × k2 × k3 × k4 × fy / sqrt(fc') × db
-  const ld = 0.45 * k1 * k2 * k3 * k4 * (fy / Math.sqrt(fc)) * db;
+  const sqrtFc = Math.sqrt(Math.max(fc, 1));
+  const ld = 0.45 * k1 * k2 * k3 * k4 * (fy / sqrtFc) * db;
   const ldMin = Math.max(300, ld);
   const ldGoverning = ldMin;
 
@@ -67,7 +68,7 @@ export function calculateDevelopmentLength(
   if (isHooked) {
     // CSA A23.3-19 Cl. 12.5.2
     // ldh = 100 × db / sqrt(fc'), min 8db or 150mm
-    ldh = (100 * db) / Math.sqrt(fc);
+    ldh = (100 * db) / sqrtFc;
     ldh = Math.max(ldh, 8 * db, 150);
   }
 

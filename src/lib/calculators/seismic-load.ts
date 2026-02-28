@@ -59,8 +59,9 @@ export function calculateSeismicLoad(input: SeismicInput): SeismicResult {
   const { Sa, Mv, Ie, W, Rd, Ro, height, structureType } = input;
 
   const Ta = height ? approximatePeriod(height, structureType) : 0;
-  const V = (Sa * Mv * Ie * W) / (Rd * Ro);
-  const baseShearCoeff = V / W;
+  const RdRo = Rd * Ro;
+  const V = RdRo > 0 ? (Sa * Mv * Ie * W) / RdRo : 0;
+  const baseShearCoeff = W > 0 ? V / W : 0;
 
   const formula = `V = S(Ta) × Mv × IE × W / (Rd × Ro)
 V = ${Sa} × ${Mv} × ${Ie} × ${W} / (${Rd} × ${Ro})

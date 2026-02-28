@@ -83,15 +83,7 @@ export function calculateBeam(input: BeamInput): BeamResult {
       reactionRight = (P * aVal) / L;
       const Pn = P * 1000;
       const amm = aVal * 1000;
-      const bmm = b * 1000;
-      maxDeflection =
-        (Pn * bmm * (Lmm * Lmm - bmm * bmm)) /
-        (9 * Math.sqrt(3) * EI * Lmm) *
-        Math.sqrt(Lmm * Lmm - bmm * bmm);
-      // Simplified: use standard formula
-      maxDeflection = (Pn * amm * bmm * (Lmm + bmm)) / (6 * EI * Lmm) *
-        Math.sqrt((Lmm + bmm) * (Lmm - bmm + amm) / (3 * Lmm));
-      // Use simpler approximate: δ ≈ Pa(L²-a²)^(3/2) / (9√3·EI·L)
+      // δ_max = Pa(L²-a²)^(3/2) / (9√3·EI·L)
       maxDeflection = (Pn * amm * Math.pow(Lmm * Lmm - amm * amm, 1.5)) /
         (9 * Math.sqrt(3) * EI * Lmm);
       formula = `M_max = Pab/L = ${P} × ${aVal.toFixed(2)} × ${b.toFixed(2)} / ${L}`;
